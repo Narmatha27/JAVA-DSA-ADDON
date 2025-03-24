@@ -1,0 +1,55 @@
+package bca;
+
+public class Reverse_linkedList {
+	class Node {
+	    int data;
+	    Node next;
+
+	    // Constructor to create a new node
+	    Node(int data) {
+	        this.data = data;
+	        this.next = null;
+	    }
+	}
+	class LinkedList {
+	    Node head;
+
+	    // Function to reverse the linked list
+	    public Node reverseLinkedList(Node head) {
+	        Node prev = null;
+	        Node current = head;
+	        Node next = null;
+
+	        while (current != null) {
+	            next = current.next;  // Save the next node
+	            current.next = prev;  // Reverse the current node's pointer
+	            prev = current;       // Move prev and current one step forward
+	            current = next;
+	        }
+	        return prev;  // prev will be the new head of the reversed list
+	    }
+
+	    // Function to print the linked list
+	    public void printLinkedList(Node head) {
+	        Node current = head;
+	        while (current != null) {
+	            System.out.print(current.data + " -> ");
+	            current = current.next;
+	        }
+	        System.out.println("null");
+	    }
+
+	    // Function to create a linked list from an array
+	    public Node createLinkedList(int[] arr) {
+	        if (arr.length == 0) return null;
+	        
+	        Node head = new Node(arr[0]);
+	        Node current = head;
+	        for (int i = 1; i < arr.length; i++) {
+	            current.next = new Node(arr[i]);
+	            current = current.next;
+	        }
+	        return head;
+	    }
+	}
+}
