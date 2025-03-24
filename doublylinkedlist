@@ -1,0 +1,18 @@
+packagelinkedlist
+    public classDoubleLInkedlist_exit{
+    Node head;
+    Node tail;
+Class Node
+{
+ int data;
+ Node next;
+ Node prev;
+ Node(int val)
+{
+ data=val;
+ next=null;
+ prev=null;
+}
+public DOubleLinkedlist_exit(){
+ head=null;
+}
